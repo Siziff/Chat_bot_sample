@@ -3,7 +3,7 @@
 ## Stack
 
 - **FastAPI** (async microservice API)
-- **OpenAI GPT-4o-mini** for conversational logic
+- **OpenAI GPT-4o-mini** for conversational logic (much better to use Gemini 2.0 Flash,  DeepSeek V3 or Claude 3.7 for roleplay chating, but i haven't api key for them)
 - **Streamlit** as the frontend UI
 - **python-dotenv** for managing secrets
 - **Custom RAG system** (in-memory keyword retriever)
@@ -12,23 +12,14 @@
 ## Project Structure
 
 blaze_chat/ 
-
 ├── main.py # FastAPI backend with /chat and /health endpoints 
-
 ├── models.py # Pydantic request/response schemas 
-
 ├── character.py # Prompt template and OpenAI chat logic 
-
 ├── rag_memory.py # RAG retrieval logic 
-
 ├── john_facts.py # Static personal facts about John 
-
 ├── chat_ui.py # Streamlit frontend (chat interface) 
-
 ├── metrics.py # Slang & bar-focus analysis utilities 
-
 ├── requirements.txt 
-
 └── README.md
 
 ## Installation & Running Locally
@@ -91,6 +82,26 @@ Blaze's system prompt defines:
 
 
 > Slang and bar scores are calculated using `metrics.py`.
+
+### **LLM-as-a-Judge (Self-eval)**
+
+**Goal:** Use another LLM to evaluate alignment.
+- Prompt:
+  > “Blaze is a 19-year-old rebellious street kid. Given this response: [...], is Blaze staying in character?”
+- Rate responses 1–5 or return a "Yes/No" for role alignment
+
+### **Tone & Emotion Matching**
+**Goal:** Ensure emotional tone matches character type.
+- Sentiment or emotion analysis
+- Style classifiers (e.g., “angry”, “sarcastic”, “excited”)
+
+### **Persona Embedding Similarity**
+**Goal:** Check semantic similarity to a set of “in-character” samples.
+- Collect 20–50 sample responses in the target persona
+- Embed using SentenceTransformers or OpenAI embeddings
+- Measure cosine similarity between model output and samples
+- `persona_score = avg(cos_sim(response, persona_samples))`
+
 
 ## Credits
 
