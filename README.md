@@ -13,13 +13,21 @@
 
 blaze_chat/ 
 ├── main.py # FastAPI backend with /chat and /health endpoints 
+
 ├── models.py # Pydantic request/response schemas 
+
 ├── character.py # Prompt template and OpenAI chat logic 
+
 ├── rag_memory.py # RAG retrieval logic 
+
 ├── john_facts.py # Static personal facts about John 
+
 ├── chat_ui.py # Streamlit frontend (chat interface) 
+
 ├── metrics.py # Slang & bar-focus analysis utilities 
+
 ├── requirements.txt 
+
 └── README.md
 
 ## Installation & Running Locally
