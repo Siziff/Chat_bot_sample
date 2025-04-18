@@ -12,6 +12,7 @@
 ## Project Structure
 
 blaze_chat/ 
+
 ├── main.py # FastAPI backend with /chat and /health endpoints 
 
 ├── models.py # Pydantic request/response schemas 
