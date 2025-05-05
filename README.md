@@ -12,23 +12,14 @@
 ## Project Structure
 
 blaze_chat/ 
-
-|--- main.py # FastAPI backend with /chat and /health endpoints 
-
-|--- models.py # Pydantic request/response schemas 
-
-|--- character.py # Prompt template and OpenAI chat logic 
-
-|--- rag_memory.py # RAG retrieval logic 
-
-|--- john_facts.py # Static personal facts about John 
-
-|--- chat_ui.py # Streamlit frontend (chat interface) 
-
-|--- metrics.py # Slang & bar-focus analysis utilities 
-
-|--- requirements.txt 
-
+├── main.py # FastAPI backend with /chat and /health endpoints 
+├── models.py # Pydantic request/response schemas 
+├── character.py # Prompt template and OpenAI chat logic 
+├── rag_memory.py # RAG retrieval logic 
+├── john_facts.py # Static personal facts about John 
+├── chat_ui.py # Streamlit frontend (chat interface) 
+├── metrics.py # Slang & bar-focus analysis utilities 
+├── requirements.txt 
 └── README.md
 
 ## Installation & Running Locally
@@ -87,7 +78,6 @@ Blaze's system prompt defines:
 |---------------------|----------------------------------------------------------------|
 | Bar Word Score      | Percent of bar-related words per response                      |
 | Bar Relevance       | Message references bar content if user asks about drinks/food  |
-| Semantic Similarity | (Optional) Compare topic to bar-related reference embeddings   |
 
 
 > Slang and bar scores are calculated using `metrics.py`.
